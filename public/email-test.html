@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Link Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            background: #1a1a2e;
+            color: white;
+        }
+        .test-link {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #8b5cf6;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+        .test-link:hover {
+            background: #7c3aed;
+            transform: scale(1.05);
+        }
+        h1 { color: #8b5cf6; }
+        p { margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Email Link Test</h1>
+    <p>Klik link di bawah ini untuk test:</p>
+    
+    <!-- Test 1: Basic mailto -->
+    <a href="mailto:contact.dhikaa@gmail.com" class="test-link">
+        📧 Test 1: Basic Mailto
+    </a>
+    <br>
+    
+    <!-- Test 2: Mailto with subject -->
+    <a href="mailto:contact.dhikaa@gmail.com?subject=Test%20Email" class="test-link">
+        📧 Test 2: Mailto + Subject
+    </a>
+    <br>
+    
+    <!-- Test 3: Regular link (for comparison) -->
+    <a href="https://gmail.com" target="_blank" class="test-link">
+        🌐 Test 3: Regular Link (Gmail)
+    </a>
+    
+    <div style="margin-top: 40px; padding: 20px; background: rgba(139, 92, 246, 0.1); border-radius: 10px;">
+        <h3>Expected Behavior:</h3>
+        <ul>
+            <li><strong>Test 1 & 2:</strong> Should open your default email client (Outlook, Gmail, dll) with the email address already filled in</li>
+            <li><strong>Test 3:</strong> Should open Gmail in a new browser tab</li>
+        </ul>
+        <p><strong>Note:</strong> If clicking Test 1 or 2 does nothing, it might mean:</p>
+        <ul>
+            <li>No default email client is configured on your system</li>
+            <li>Browser is blocking mailto: links (check browser settings)</li>
+            <li>You need to allow the browser to open email applications</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -128,20 +128,20 @@ const Contact = () => {
                  <div>
                     <p className="text-sm text-gray-400 mb-4 font-medium">Follow Me</p>
                     <div className="flex gap-3">
-                      {SOCIAL_LINKS.map((social) => (
-                        <motion.a
-                          key={social.name}
-                          href={social.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-3 bg-white/5 border border-white/10 rounded-xl text-gray-300 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300"
-                          whileHover={{ scale: 1.1, y: -2 }}
-                          whileTap={{ scale: 0.95 }}
-                          title={social.name}
-                        >
-                          <social.icon size={20} />
-                        </motion.a>
-                      ))}
+                       {SOCIAL_LINKS.map((social) => (
+                         <motion.a
+                           key={social.name}
+                           href={social.url}
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           className="p-3 bg-white/5 border border-white/10 rounded-xl text-gray-300 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                           whileHover={{ scale: 1.1, y: -2 }}
+                           whileTap={{ scale: 0.95 }}
+                           title={social.name === 'Email' ? 'Send Email via Gmail' : social.name}
+                         >
+                           <social.icon size={20} />
+                         </motion.a>
+                       ))}
                     </div>
                  </div>
                </div>

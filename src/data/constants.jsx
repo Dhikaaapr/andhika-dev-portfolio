@@ -63,13 +63,14 @@ export const NAV_LINKS = [
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
+  { name: "Education", href: "#education" },
   { name: "Contact", href: "#contact" },
 ];
 
 export const SOCIAL_LINKS = [
   {
     name: "Email",
-    url: "mailto:andhika0143@gmail.com",
+    url: "https://mail.google.com/mail/?view=cm&fs=1&to=contact.dhikaa@gmail.com&su=Hello%20from%20Portfolio",
     icon: FaEnvelope,
   },
   {
@@ -84,7 +85,7 @@ export const SOCIAL_LINKS = [
   },
   {
     name: "Instagram",
-    url: "https://www.instagram.com/dhik.favor",
+    url: "https://www.instagram.com/dhikprs?igsh=bng5ZDk4djAxcGVr",
     icon: FaInstagram,
   },
 ];
@@ -207,10 +208,35 @@ export const EXPERIENCES = [
   },
 ];
 
+export const EDUCATION = {
+  degree: {
+    title: "Bachelor of Information Technology",
+    university: "Universitas Paramadina",
+    period: "Sep 2023 - Jan 2026",
+    location: "Jakarta, Indonesia",
+    gpa: "3.85",
+    status: "Still Ongoing",
+  },
+  overview:
+    "Focused on Software Engineering, Human-Computer Interaction (HCI), and Full-Stack Web Development. Specialized in building robust software systems and user-centered applications. Completed a capstone project involving full-stack web development using modern technologies and industry best practices.",
+  achievements: [
+    {
+      title: "Data Classification and Summarization Using IBM Granite (2025)",
+      description:
+        "Mengikuti proyek pembelajaran yang berfokus pada pemanfaatan teknologi AI IBM Granite untuk melakukan klasifikasi data dan pembuatan ringkasan otomatis (summarization). Dalam proyek ini, saya mempelajari cara kerja model language AI dalam memahami, mengelompokkan, dan menyederhanakan informasi berbasis teks.",
+    },
+    {
+      title: "Beasiswa PSR (Paramadina Social Responsibility) (2023)",
+      description:
+        "Program beasiswa yang diselenggarakan oleh Universitas Paramadina untuk memberikan akses pendidikan tinggi bagi mereka yang berhak tetapi memiliki keterbatasan ekonomi. Beasiswa ini ditujukan untuk jenjang S1 di Universitas Paramadina, dengan fokus pada warga sekitar kampus atau mereka yang direkomendasikan oleh mitra universitas.",
+    },
+  ],
+};
+
 export const CONTACT = {
   title: "Let's Work Together",
   subtitle: "Have a project in mind? Let's create something amazing together.",
-  email: "andhika0143@gmail.com",
+  email: "contact.dhikaa@gmail.com",
   serviceId: "service_tc5mtr2",
   templateId: "template_ja9ervo",
   publicKey: "eg_PZe-SVDLgli38x",

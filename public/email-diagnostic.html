@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Test - Diagnostic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 40px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            background: linear-gradient(to right, #8b5cf6, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        .test-section {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, #8b5cf6, #6366f1);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            margin: 10px 10px 10px 0;
+            transition: all 0.3s;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+        }
+        .btn-copy {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        .info-box {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .warning-box {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #ef4444;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .success-box {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10b981;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            display: none;
+        }
+        .email-display {
+            font-family: 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-size: 18px;
+            color: #8b5cf6;
+            word-break: break-all;
+        }
+        ol, ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #8b5cf6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📧 Email Link Diagnostic Tool</h1>
+        
+        <div class="test-section">
+            <h2 style="margin-bottom: 20px;">🔍 Test 1: Click mailto: Link</h2>
+            <p style="margin-bottom: 15px;">Click tombol di bawah ini. Seharusnya membuka email client (Outlook, Gmail app, dll):</p>
+            
+            <a href="mailto:contact.dhikaa@gmail.com" class="btn" id="mailtoTest">
+                📧 Click Here to Send Email
+            </a>
+            
+            <div class="email-display">
+                Email Address: contact.dhikaa@gmail.com
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2 style="margin-bottom: 20px;">📋 Test 2: Copy Email Address</h2>
+            <p style="margin-bottom: 15px;">Jika Test 1 tidak bekerja, copy email ini secara manual:</p>
+            
+            <button class="btn btn-copy" onclick="copyEmail()">
+                📋 Copy Email to Clipboard
+            </button>
+            
+            <div class="success-box" id="copySuccess">
+                ✅ Email berhasil di-copy! Sekarang buka email client Anda dan paste.
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h3 style="margin-bottom: 15px;">⚠️ Jika Test 1 Tidak Bekerja:</h3>
+            <p style="margin-bottom: 10px;">Kemungkinan penyebab:</p>
+            <ol>
+                <li><strong>Windows belum punya default email app</strong>
+                    <ul>
+                        <li>Buka: <code>Windows Settings → Apps → Default apps</code></li>
+                        <li>Scroll ke bawah, cari "Email"</li>
+                        <li>Pilih app email favorit (Microsoft Outlook, Mail, dll)</li>
+                    </ul>
+                </li>
+                <li><strong>Browser blocking mailto: links</strong>
+                    <ul>
+                        <li>Chrome/Edge: Cek di address bar apakah ada icon "blocked" atau "settings"</li>
+                        <li>Klik icon tersebut dan allow email links</li>
+                    </ul>
+                </li>
+                <li><strong>Tidak ada email app yang ter-install</strong>
+                    <ul>
+                        <li>Install email client seperti Thunderbird, Outlook, atau Windows Mail</li>
+                        <li>Atau gunakan webmail (Gmail.com, Outlook.com) di browser</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="info-box">
+            <h3 style="margin-bottom: 15px;">💡 Cara Setup Default Email App di Windows:</h3>
+            <ol>
+                <li>Tekan <code>Win + I</code> untuk buka Settings</li>
+                <li>Pilih <strong>Apps</strong></li>
+                <li>Klik <strong>Default apps</strong> di sidebar</li>
+                <li>Scroll down dan cari <strong>"Email"</strong></li>
+                <li>Klik dan pilih email app yang mau dipakai (Outlook, Mail, dll)</li>
+                <li>Kalau tidak ada pilihan, install dulu email app di Windows</li>
+            </ol>
+        </div>
+
+        <div class="test-section">
+            <h2 style="margin-bottom: 20px;">📝 What Happened?</h2>
+            <p style="margin-bottom: 15px;">Setelah click Test 1, apa yang terjadi?</p>
+            <ul style="list-style: none; margin-left: 0;">
+                <li>✅ Email client terbuka (Outlook, etc) → <strong>BEKERJA!</strong></li>
+                <li>❌ Tidak terjadi apa-apa → Default email app belum di-set</li>
+                <li>⚠️ Browser tanya permission → Allow permission untuk mailto: links</li>
+                <li>🌐 Buka tab baru kosong → Browser issue, coba browser lain</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function copyEmail() {
+            const email = 'contact.dhikaa@gmail.com';
+            navigator.clipboard.writeText(email).then(() => {
+                const successBox = document.getElementById('copySuccess');
+                successBox.style.display = 'block';
+                setTimeout(() => {
+                    successBox.style.display = 'none';
+                }, 3000);
+            }).catch(err => {
+                alert('Failed to copy. Email: ' + email);
+            });
+        }
+
+        // Log click events
+        document.getElementById('mailtoTest').addEventListener('click', function(e) {
+            console.log('Mailto link clicked!');
+            console.log('Trying to open: mailto:contact.dhikaa@gmail.com');
+            
+            // Don't prevent default - let browser handle it
+            setTimeout(() => {
+                console.log('If email client didn\'t open, check Windows default email app settings');
+            }, 500);
+        });
+    </script>
+</body>
+</html>

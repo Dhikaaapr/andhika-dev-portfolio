@@ -110,7 +110,7 @@ const Navbar = () => {
                   className="p-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  title={social.name}
+                  title={social.name === 'Email' ? 'Send Email via Gmail' : social.name}
                 >
                   <social.icon size={18} />
                 </motion.a>
@@ -180,6 +180,7 @@ const Navbar = () => {
                       className="p-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
+                      title={social.name === 'Email' ? 'Send Email via Gmail' : social.name}
                     >
                       <social.icon size={20} />
                     </motion.a>
