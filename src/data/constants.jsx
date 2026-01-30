@@ -140,14 +140,14 @@ export const SKILLS = [
 
 export const PROJECTS = [
   {
-    name: "Bibliotech",
-    image: "/assets/projects/login_bibliotech.png",
+    name: "TaskHub",
+    video: "/assets/projects/aplikasi_taskhub.mp4",
     description:
-      "Perpustakaan digital dengan sistem rekomendasi buku menggunakan metode SAW. Platform modern untuk mengelola dan merekomendasikan buku berdasarkan preferensi pengguna.",
-    gradient: ["#1A1A2E", "#16213E"],
+      "Aplikasi manajemen tugas real-time yang dibangun dengan Flutter dan Firebase. Memungkinkan pengguna untuk melacak, mengelola, dan berkolaborasi dalam berbagai tugas secara efisien.",
+    gradient: ["#FF512F", "#DD2476"],
     url: "https://github.com/dhikaaaaaaa",
-    tech: ["Next.js", "Tailwind CSS", "MySQL"],
-    isMobile: false,
+    tech: ["Flutter", "Firebase"],
+    isMobile: true,
   },
   {
     name: "Mentalist - User App",
