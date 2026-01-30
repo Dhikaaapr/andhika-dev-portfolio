@@ -5,10 +5,13 @@ import { HiExternalLink, HiPlay, HiX, HiChevronLeft, HiChevronRight } from 'reac
 
 const ProjectModal = ({ project, onClose }) => {
   useEffect(() => {
-    // Lock body scroll when modal is open
+    // Lock body scroll and pause background music
     document.body.style.overflow = 'hidden';
+    window.dispatchEvent(new Event('bg-music-pause'));
+    
     return () => {
       document.body.style.overflow = 'unset';
+      window.dispatchEvent(new Event('bg-music-resume'));
     };
   }, []);
 

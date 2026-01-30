@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS, SOCIAL_LINKS } from '../../data/constants';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import MusicPlayer from '../ui/MusicPlayer';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -96,8 +97,10 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* Social Links - Desktop */}
+                {/* Social Links - Desktop */}
             <div className="hidden md:flex items-center gap-3">
+              <MusicPlayer /> {/* Music Player in Navbar */}
+              <div className="w-px h-6 bg-white/10 mx-2" /> {/* Divider */}
               {SOCIAL_LINKS.slice(0, 3).map((social) => (
                 <motion.a
                   key={social.name}
@@ -160,8 +163,14 @@ const Navbar = () => {
                   </motion.a>
                 ))}
 
-                {/* Social Links - Mobile */}
-                <div className="flex items-center gap-4 pt-4 px-4">
+                {/* Mobile Extra Items */}
+                <div className="border-t border-gray-800/50 mt-4 pt-4 px-4 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-400 text-sm">Music</span>
+                    <MusicPlayer />
+                  </div>
+                  
+                  <div className="flex items-center gap-4">
                   {SOCIAL_LINKS.map((social) => (
                     <motion.a
                       key={social.name}
@@ -178,9 +187,10 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
     </>
   );
 };
