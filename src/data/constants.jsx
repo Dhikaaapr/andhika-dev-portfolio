@@ -145,7 +145,7 @@ export const PROJECTS = [
     description:
       "Aplikasi manajemen tugas real-time yang dibangun dengan Flutter dan Firebase. Memungkinkan pengguna untuk melacak, mengelola, dan berkolaborasi dalam berbagai tugas secara efisien.",
     gradient: ["#FF512F", "#DD2476"],
-    url: "https://github.com/dhikaaaaaaa",
+    url: "https://github.com/Dhikaaapr",
     tech: ["Flutter", "Firebase"],
     isMobile: true,
   },
@@ -156,18 +156,18 @@ export const PROJECTS = [
     description:
       "Aplikasi mobile untuk pengguna mencari konselor dan tes kesehatan mental. Dilengkapi dengan fitur chat, booking, dan mood tracker.",
     gradient: ["#134E5E", "#71B280"],
-    url: "https://github.com/dhikaaaaaaa",
+    url: "https://github.com/Dhikaaapr",
     tech: ["Flutter", "Laravel", "MySQL", "Supabase"],
     isMobile: true,
   },
   {
     name: "Mentalist - Counselor App",
     image: "/assets/projects/council_calmora.png",
-    video: "/assets/projects/aplikasi_counselor.mov",
+    video: "/assets/projects/aplikasi_counselor.mp4",
     description:
       "Aplikasi khusus konselor untuk mengelola sesi dan chat pasien. Dashboard lengkap untuk monitoring schedule dan riwayat konsultasi.",
     gradient: ["#5D26C1", "#a17fe0"],
-    url: "https://github.com/dhikaaaaaaa",
+    url: "https://github.com/Dhikaaapr",
     tech: ["Flutter", "Laravel", "MySQL", "Supabase"],
     isMobile: true,
   },
@@ -177,7 +177,7 @@ export const PROJECTS = [
     description:
       "Aplikasi khusus admin untuk mengelola user, konselor, dan konten. Manajemen sistem yang terintegrasi penuh dalam genggaman.",
     gradient: ["#2C5364", "#203A43"],
-    url: "https://github.com/dhikaaaaaaa",
+    url: "https://github.com/Dhikaaapr",
     tech: ["Flutter", "Laravel", "MySQL", "Supabase"],
     isMobile: true,
   },
