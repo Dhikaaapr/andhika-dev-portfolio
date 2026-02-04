@@ -93,7 +93,7 @@ const Skills = () => {
           animate={isInView ? 'visible' : 'hidden'}
           className="space-y-12"
         >
-          {SKILLS.map((category, catIndex) => (
+          {SKILLS.map((category) => (
             <motion.div 
               key={category.category} 
               variants={categoryVariants}
@@ -109,7 +109,7 @@ const Skills = () => {
               
               {/* Skills Row */}
               <div className="flex flex-wrap gap-4">
-                {category.items.map((skill, index) => (
+                {category.items.map((skill) => (
                   <motion.div
                     key={skill.name}
                     variants={skillCardVariants}

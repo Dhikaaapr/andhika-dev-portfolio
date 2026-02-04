@@ -65,9 +65,6 @@ const Contact = () => {
     }
   };
 
-  const inputClasses =
-    'w-full px-5 py-4 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-violet-500/50 focus:bg-gray-800/70 transition-all duration-300';
-
   return (
     <section
       id="contact"

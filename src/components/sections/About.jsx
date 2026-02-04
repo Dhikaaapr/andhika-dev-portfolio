@@ -160,7 +160,7 @@ const About = () => {
                 { icon: HiCode, label: 'Clean Code', color: 'violet' },
                 { icon: HiSparkles, label: 'Modern UI', color: 'purple' },
                 { icon: HiLightningBolt, label: 'Fast Delivery', color: 'indigo' },
-              ].map((feature, index) => (
+              ].map((feature) => (
                 <motion.div
                   key={feature.label}
                   whileHover={{ y: -5, scale: 1.02 }}

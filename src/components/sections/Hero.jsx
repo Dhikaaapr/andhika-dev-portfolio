@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ReactTyped } from 'react-typed';
 import { HERO, SOCIAL_LINKS } from '../../data/constants';

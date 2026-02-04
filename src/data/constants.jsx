@@ -185,15 +185,41 @@ export const PROJECTS = [
 
 export const EXPERIENCES = [
   {
-    company: "Universitas Paramadina",
-    role: "Frontend Developer",
+    company: "Mentalist - Mental Health Platform",
+    role: "Fullstack Developer",
+    period: "Jan 2025 - Present",
+    description: [
+      "Mengembangkan 3 aplikasi mobile yang saling terintegrasi: User App, Counselor App, dan Admin App",
+      "Membangun backend API lengkap menggunakan Laravel untuk autentikasi, booking, chat real-time, dan manajemen konten",
+      "Mengimplementasikan Supabase sebagai database utama dengan fitur real-time subscriptions",
+      "Mendesain arsitektur sistem yang scalable untuk menangani komunikasi antar aplikasi",
+    ],
+    tech: ["Flutter", "Laravel", "Supabase", "REST API"],
+  },
+  {
+    company: "TaskHub - Task Management App",
+    role: "Mobile Developer",
+    period: "Nov 2024 - Des 2024",
+    description: [
+      "Mengembangkan aplikasi mobile manajemen tugas real-time menggunakan Flutter dan Firebase",
+      "Membangun fitur Video Meet untuk rapat kelompok menggunakan integrasi video conference",
+      "Mengimplementasikan sistem Push Notification untuk reminder tugas dan aktivitas tim",
+      "Membuat dashboard 'Your Task' dan 'Upcoming Deadlines' untuk tracking tugas personal",
+      "Mengimplementasikan Firebase Auth dan Cloud Firestore untuk real-time sync data",
+    ],
+    tech: ["Flutter", "Firebase", "Cloud Firestore", "Push Notifications", "Video Meet"],
+  },
+  {
+    company: "Calmora - Mental Health Platform",
+    role: "AI & Frontend Developer",
     period: "Sep 2024 - Jan 2025",
     description: [
-      "Berkontribusi dalam pengembangan Calmora, platform digital kesehatan mental",
-      "Melakukan slicing desain UI ke halaman website responsif",
-      "Mengintegrasikan API chatbot khusus kesehatan mental",
+      "Mengembangkan AI Chatbot untuk konsultasi kesehatan mental menggunakan Gemini API",
+      "Membuat dan mengintegrasikan API Gemini untuk memberikan respons yang kontekstual dan empatik",
+      "Membangun fitur Quiz interaktif untuk asesmen kesehatan mental pengguna",
+      "Melakukan slicing desain ke halaman website yang responsif dan interaktif",
     ],
-    tech: ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+    tech: ["JavaScript", "Gemini API", "Tailwind CSS", "REST API"],
   },
   {
     company: "HIMTI",
