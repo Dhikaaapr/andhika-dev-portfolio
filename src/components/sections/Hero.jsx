@@ -115,14 +115,14 @@ const Hero = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
       </div>
 
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-24 pb-12">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-[calc(100vh-6rem)]">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-20 pb-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-8 items-center min-h-[calc(100vh-6rem)]">
           {/* Text Content */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="order-2 lg:order-1"
+            className="order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             {/* Greeting Badge */}
             <motion.div variants={fadeInUp} className="mb-6">
@@ -137,7 +137,7 @@ const Hero = () => {
 
             {/* Name with Gradient Underline */}
             <motion.div variants={fadeInUp} className="mb-4">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight">
                 Hi, I'm{' '}
                 <span className="relative inline-block">
                   <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
@@ -163,7 +163,7 @@ const Hero = () => {
             {/* Typed Text */}
             <motion.div
               variants={fadeInUp}
-              className="text-2xl sm:text-3xl lg:text-4xl font-medium text-gray-300 font-mono mb-8 min-h-[2.5rem]"
+              className="text-xl sm:text-3xl lg:text-4xl font-medium text-gray-300 font-mono mb-8 min-h-[2.5rem]"
             >
               <span className="text-gray-500">&gt; </span>
               <ReactTyped
@@ -180,7 +180,7 @@ const Hero = () => {
             {/* Description */}
             <motion.p
               variants={fadeInUp}
-              className="text-gray-400 text-lg sm:text-xl leading-relaxed max-w-xl mb-10"
+              className="text-gray-400 text-base sm:text-xl leading-relaxed max-w-xl mb-10"
             >
               {HERO.description}
             </motion.p>
@@ -188,7 +188,7 @@ const Hero = () => {
             {/* CTA Buttons */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-wrap items-center gap-4 mb-12"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-12"
             >
               <motion.a
                 href="#contact"
@@ -196,7 +196,7 @@ const Hero = () => {
                   e.preventDefault();
                   document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold rounded-2xl overflow-hidden shadow-xl shadow-violet-500/25 hover:shadow-violet-500/40 transition-all duration-300"
+                className="group relative inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold rounded-2xl overflow-hidden shadow-xl shadow-violet-500/25 hover:shadow-violet-500/40 transition-all duration-300"
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -210,7 +210,7 @@ const Hero = () => {
                 download
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 px-8 py-4 text-white font-semibold rounded-2xl border-2 border-gray-700 hover:border-violet-500/50 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-800/70 transition-all duration-300"
+                className="group inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 text-white font-semibold rounded-2xl border-2 border-gray-700 hover:border-violet-500/50 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-800/70 transition-all duration-300"
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -222,7 +222,7 @@ const Hero = () => {
             {/* Social Links */}
             <motion.div
               variants={fadeInUp}
-              className="flex items-center gap-4"
+              className="flex items-center gap-4 hidden sm:flex"
             >
               <span className="text-gray-500 text-sm font-medium">Find me on</span>
               <div className="h-px flex-1 max-w-[60px] bg-gradient-to-r from-gray-700 to-transparent" />
@@ -251,7 +251,7 @@ const Hero = () => {
             variants={scaleIn}
             initial="hidden"
             animate="visible"
-            className="order-1 lg:order-2 flex justify-center lg:justify-end"
+            className="order-1 lg:order-2 flex justify-center lg:justify-end py-8 lg:py-0"
           >
             <div className="relative">
               {/* Outer Rotating Ring */}
@@ -275,7 +275,7 @@ const Hero = () => {
               <motion.div
                 variants={floatVariants}
                 animate="animate"
-                className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-[400px] lg:h-[400px]"
+                className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[400px] lg:h-[400px]"
               >
                 {/* Gradient Border */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-violet-500 via-purple-500 to-indigo-500 p-1.5 shadow-2xl shadow-violet-500/30">
@@ -293,19 +293,19 @@ const Hero = () => {
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 1.5, duration: 0.5 }}
-                  className="absolute -right-4 top-8 sm:top-12"
+                  className="absolute -right-0 top-4 sm:-right-4 sm:top-12"
                 >
                   <motion.div
                     animate={{ y: [0, -8, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                    className="px-5 py-3 bg-gray-900/95 backdrop-blur-xl rounded-2xl border border-gray-700/50 shadow-2xl"
+                    className="px-3 py-2 sm:px-5 sm:py-3 bg-gray-900/95 backdrop-blur-xl rounded-2xl border border-gray-700/50 shadow-2xl"
                   >
                     <div className="flex items-center gap-2.5">
                       <div className="relative">
-                        <div className="w-3 h-3 bg-green-500 rounded-full" />
-                        <div className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping opacity-50" />
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-500 rounded-full" />
+                        <div className="absolute inset-0 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-500 rounded-full animate-ping opacity-50" />
                       </div>
-                      <span className="text-sm font-medium text-gray-200">Open for Work</span>
+                      <span className="text-xs sm:text-sm font-medium text-gray-200">Open for Work</span>
                     </div>
                   </motion.div>
                 </motion.div>
@@ -315,16 +315,16 @@ const Hero = () => {
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 1.7, duration: 0.5 }}
-                  className="absolute -left-4 bottom-8 sm:bottom-16"
+                  className="absolute -left-0 bottom-4 sm:-left-4 sm:bottom-16"
                 >
                   <motion.div
                     animate={{ y: [0, -6, 0] }}
                     transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                    className="px-5 py-3 bg-gray-900/95 backdrop-blur-xl rounded-2xl border border-gray-700/50 shadow-2xl"
+                    className="px-3 py-2 sm:px-5 sm:py-3 bg-gray-900/95 backdrop-blur-xl rounded-2xl border border-gray-700/50 shadow-2xl"
                   >
                     <div className="text-center">
-                      <span className="text-3xl font-bold bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent">3+</span>
-                      <p className="text-xs text-gray-400 mt-0.5">Years Coding</p>
+                      <span className="text-xl sm:text-3xl font-bold bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent">3+</span>
+                      <p className="text-[10px] sm:text-xs text-gray-400 mt-0.5">Years Coding</p>
                     </div>
                   </motion.div>
                 </motion.div>
@@ -334,16 +334,16 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.9, duration: 0.5 }}
-                  className="absolute -bottom-6 left-1/2 -translate-x-1/2"
+                  className="absolute -bottom-4 left-1/2 -translate-x-1/2"
                 >
                   <motion.div
                     animate={{ y: [0, -5, 0] }}
                     transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-                    className="px-5 py-3 bg-gray-900/95 backdrop-blur-xl rounded-2xl border border-gray-700/50 shadow-2xl"
+                    className="px-3 py-2 sm:px-5 sm:py-3 bg-gray-900/95 backdrop-blur-xl rounded-2xl border border-gray-700/50 shadow-2xl"
                   >
                     <div className="text-center">
-                      <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">15+</span>
-                      <p className="text-xs text-gray-400 mt-0.5">Technologies</p>
+                      <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">15+</span>
+                      <p className="text-[10px] sm:text-xs text-gray-400 mt-0.5">Technologies</p>
                     </div>
                   </motion.div>
                 </motion.div>
@@ -352,7 +352,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator - Hidden on mobile, visible on lg */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
