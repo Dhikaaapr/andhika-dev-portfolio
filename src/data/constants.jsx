@@ -132,6 +132,7 @@ export const SKILLS = [
     items: [
       { name: "MySQL", icon: SiMysql, color: "#4479A1" },
       { name: "Supabase", icon: SiSupabase, color: "#3ECF8E" },
+      { name: "Firebase", icon: SiFlutter, color: "#FFCA28" },
       { name: "Git", icon: FaGitAlt, color: "#F05032" },
       { name: "Figma", icon: FaFigma, color: "#F24E1E" },
     ],
@@ -207,7 +208,13 @@ export const EXPERIENCES = [
       "Membuat dashboard 'Your Task' dan 'Upcoming Deadlines' untuk tracking tugas personal",
       "Mengimplementasikan Firebase Auth dan Cloud Firestore untuk real-time sync data",
     ],
-    tech: ["Flutter", "Firebase", "Cloud Firestore", "Push Notifications", "Video Meet"],
+    tech: [
+      "Flutter",
+      "Firebase",
+      "Cloud Firestore",
+      "Push Notifications",
+      "Video Meet",
+    ],
   },
   {
     company: "Calmora - Mental Health Platform",

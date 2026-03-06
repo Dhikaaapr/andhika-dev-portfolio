@@ -1,11 +1,13 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ABOUT, HERO } from '../../data/constants';
+import { useAboutData } from '../../hooks/useFirebaseData';
 import { HiCode, HiSparkles, HiLightningBolt } from 'react-icons/hi';
 
 const About = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const { data: aboutData } = useAboutData();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -105,7 +107,7 @@ const About = () => {
                   className="bg-gray-900/95 backdrop-blur-xl rounded-2xl border border-gray-700/50 p-5 shadow-2xl"
                 >
                   <div className="flex items-center gap-6">
-                    {ABOUT.stats.slice(0, 2).map((stat, index) => (
+                    {aboutData.stats.slice(0, 2).map((stat, index) => (
                       <div 
                         key={stat.label} 
                         className={`text-center ${index > 0 ? 'border-l border-gray-700/50 pl-6' : ''}`}
@@ -147,7 +149,7 @@ const About = () => {
 
             {/* Description */}
             <motion.div variants={itemVariants} className="space-y-5">
-              {ABOUT.description.map((paragraph, index) => (
+              {aboutData.description.map((paragraph, index) => (
                 <p key={index} className="text-gray-400 text-lg leading-relaxed">
                   {paragraph}
                 </p>
@@ -181,7 +183,7 @@ const About = () => {
 
             {/* Stats Row */}
             <motion.div variants={itemVariants} className="flex flex-wrap gap-8 pt-6">
-              {ABOUT.stats.map((stat) => (
+              {aboutData.stats.map((stat) => (
                 <div key={stat.label}>
                   <div className="text-4xl font-bold text-white">{stat.value}</div>
                   <div className="text-sm text-gray-500 font-medium">{stat.label}</div>

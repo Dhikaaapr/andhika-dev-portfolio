@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { PROJECTS } from '../../data/constants';
+import { useProjectsData } from '../../hooks/useFirebaseData';
 import { HiExternalLink, HiPlay, HiX, HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 
 const ProjectModal = ({ project, onClose }) => {
@@ -356,6 +357,16 @@ const Projects = () => {
   const scrollContainerRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const [selectedProject, setSelectedProject] = useState(null);
+  const { data: firebaseProjects, loading } = useProjectsData();
+
+  // Map Firebase projects to match the expected shape
+  const projects = (Array.isArray(firebaseProjects) ? firebaseProjects : PROJECTS).map((p) => ({
+    ...p,
+    gradient: p.gradient || ['#7C3AED', '#6366F1'],
+    tech: p.tech || [],
+    description: p.description || '',
+    isMobile: p.isMobile || false,
+  }));
 
   const scroll = (direction) => {
     if (scrollContainerRef.current) {
@@ -433,9 +444,9 @@ const Projects = () => {
         {/* Spacer for first item */}
         <div className="flex-shrink-0 w-0 lg:w-[calc((100vw-1280px)/2)]" />
         
-        {PROJECTS.map((project, index) => (
+        {projects.map((project, index) => (
           <ProjectCard
-            key={project.name}
+            key={project.name || project.id || index}
             project={project}
             index={index}
             onClick={setSelectedProject}

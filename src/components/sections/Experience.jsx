@@ -1,11 +1,15 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { EXPERIENCES } from '../../data/constants';
+import { useExperiencesData } from '../../hooks/useFirebaseData';
 import { HiBriefcase, HiAcademicCap } from 'react-icons/hi';
 
 const Experience = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const { data: experiences } = useExperiencesData();
+
+  const experienceList = Array.isArray(experiences) ? experiences : EXPERIENCES;
 
   return (
     <section
@@ -48,13 +52,13 @@ const Experience = () => {
 
           {/* Experience Items */}
           <div className="space-y-16">
-            {EXPERIENCES.map((exp, index) => {
+            {experienceList.map((exp, index) => {
               const isLeft = index % 2 === 0;
               const Icon = index === 0 ? HiBriefcase : HiAcademicCap;
               
               return (
                 <motion.div
-                  key={exp.company}
+                  key={exp.company || exp.id || index}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-50px' }}

@@ -2,10 +2,20 @@ import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ReactTyped } from 'react-typed';
 import { HERO, SOCIAL_LINKS } from '../../data/constants';
+import { useHeroData } from '../../hooks/useFirebaseData';
 import { HiDownload, HiArrowRight } from 'react-icons/hi';
 
 const Hero = () => {
   const containerRef = useRef(null);
+  const { data: heroData } = useHeroData();
+
+  // Merge Firebase data with static fallback
+  const hero = { ...HERO, ...heroData };
+  const firstName = hero.firstName || HERO.firstName;
+  const typedStrings = hero.typedStrings?.length > 0 ? hero.typedStrings : HERO.typedStrings;
+  const description = hero.description || HERO.description;
+  const profileImage = hero.profileImage || HERO.profileImage;
+  const cvUrl = hero.cvUrl || HERO.cvUrl;
 
   // Floating animation variants
   const floatVariants = {
@@ -141,7 +151,7 @@ const Hero = () => {
                 Hi, I'm{' '}
                 <span className="relative inline-block">
                   <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
-                    {HERO.firstName}
+                    {firstName}
                   </span>
                   {/* Animated Underline */}
                   <motion.span
@@ -167,7 +177,7 @@ const Hero = () => {
             >
               <span className="text-gray-500">&gt; </span>
               <ReactTyped
-                strings={HERO.typedStrings}
+                strings={typedStrings}
                 typeSpeed={40}
                 backSpeed={25}
                 backDelay={2500}
@@ -182,7 +192,7 @@ const Hero = () => {
               variants={fadeInUp}
               className="text-gray-400 text-base sm:text-xl leading-relaxed max-w-xl mb-10"
             >
-              {HERO.description}
+              {description}
             </motion.p>
 
             {/* CTA Buttons */}
@@ -206,7 +216,7 @@ const Hero = () => {
               </motion.a>
 
               <motion.a
-                href={HERO.cvUrl}
+                href={cvUrl}
                 download
                 target="_blank"
                 rel="noopener noreferrer"
@@ -281,8 +291,8 @@ const Hero = () => {
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-violet-500 via-purple-500 to-indigo-500 p-1.5 shadow-2xl shadow-violet-500/30">
                   <div className="w-full h-full rounded-full overflow-hidden bg-gray-900">
                     <img
-                      src={HERO.profileImage}
-                      alt={HERO.name}
+                      src={profileImage}
+                      alt={hero.name || HERO.name}
                       className="w-full h-full object-cover"
                     />
                   </div>

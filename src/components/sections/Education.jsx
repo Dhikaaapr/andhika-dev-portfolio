@@ -1,11 +1,13 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { EDUCATION } from '../../data/constants';
+import { useEducationData } from '../../hooks/useFirebaseData';
 import { HiAcademicCap, HiBookOpen, HiStar, HiLocationMarker, HiCalendar } from 'react-icons/hi';
 
 const Education = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const { data: eduData } = useEducationData();
 
   return (
     <section
@@ -71,28 +73,28 @@ const Education = () => {
                 <div className="flex-1">
                   {/* Status Badge */}
                   <span className="inline-flex px-4 py-1.5 mb-4 text-xs font-bold tracking-wider text-emerald-900 bg-emerald-400 rounded-full uppercase shadow-lg shadow-emerald-500/20">
-                    {EDUCATION.degree.status}
+                    {eduData.degree.status}
                   </span>
                   
                   {/* Degree Title */}
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                    {EDUCATION.degree.title}
+                    {eduData.degree.title}
                   </h3>
                   
                   {/* University */}
                   <p className="text-gray-400 text-lg font-medium mb-4">
-                    {EDUCATION.degree.university}
+                    {eduData.degree.university}
                   </p>
                   
                   {/* Meta Info */}
                   <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
                     <span className="flex items-center gap-2">
                       <HiCalendar className="w-4 h-4" />
-                      {EDUCATION.degree.period}
+                      {eduData.degree.period}
                     </span>
                     <span className="flex items-center gap-2">
                       <HiLocationMarker className="w-4 h-4" />
-                      {EDUCATION.degree.location}
+                      {eduData.degree.location}
                     </span>
                   </div>
                 </div>
@@ -105,7 +107,7 @@ const Education = () => {
                   transition={{ duration: 0.5, delay: 0.3, type: 'spring' }}
                   className="flex flex-col items-center justify-center w-28 h-28 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full shadow-xl shadow-emerald-500/30 shrink-0"
                 >
-                  <span className="text-3xl font-bold text-white">{EDUCATION.degree.gpa}</span>
+                  <span className="text-3xl font-bold text-white">{eduData.degree.gpa}</span>
                   <span className="text-xs font-semibold text-emerald-100">GPA / 4.00</span>
                 </motion.div>
               </div>
@@ -133,7 +135,7 @@ const Education = () => {
               <h4 className="text-xl font-bold text-white mb-4">Overview</h4>
               
               <p className="text-gray-400 leading-relaxed">
-                {EDUCATION.overview}
+                {eduData.overview}
               </p>
             </div>
           </motion.div>
@@ -153,7 +155,7 @@ const Education = () => {
               <h4 className="text-xl font-bold text-white">Key Achievements</h4>
             </div>
 
-            {EDUCATION.achievements.map((achievement, index) => (
+            {eduData.achievements.map((achievement, index) => (
               <motion.div
                 key={achievement.title}
                 initial={{ opacity: 0, y: 20 }}

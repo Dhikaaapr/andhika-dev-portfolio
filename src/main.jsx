@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 
@@ -17,13 +18,14 @@ console.log(
   'color: #9CA3AF; font-size: 11px;'
 );
 console.log(
-  '%c⚡ Built with React + Vite + TailwindCSS',
+  '%c⚡ Built with React + Vite + TailwindCSS + Firebase',
   'color: #10B981; font-size: 11px; font-style: italic;'
 );
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>,
 )
-

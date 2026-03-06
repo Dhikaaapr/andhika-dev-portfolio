@@ -1,10 +1,27 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { SKILLS } from '../../data/constants';
+import { useSkillsData } from '../../hooks/useFirebaseData';
 
 const Skills = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const { data: firebaseSkills } = useSkillsData();
+
+  // Determine if we have Firebase skills (flat array) or static skills (grouped)
+  const isFirebaseData = Array.isArray(firebaseSkills) && firebaseSkills.length > 0 && firebaseSkills[0]?.name;
+
+  // Group Firebase skills by category for display
+  const skillCategories = isFirebaseData
+    ? Object.entries(
+        firebaseSkills.reduce((acc, skill) => {
+          const cat = skill.category || 'Other';
+          if (!acc[cat]) acc[cat] = [];
+          acc[cat].push(skill);
+          return acc;
+        }, {})
+      ).map(([category, items]) => ({ category, items }))
+    : SKILLS;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -93,7 +110,7 @@ const Skills = () => {
           animate={isInView ? 'visible' : 'hidden'}
           className="space-y-12"
         >
-          {SKILLS.map((category) => (
+          {skillCategories.map((category) => (
             <motion.div 
               key={category.category} 
               variants={categoryVariants}
@@ -134,13 +151,17 @@ const Skills = () => {
                       <div 
                         className="p-2 rounded-xl transition-all duration-300"
                         style={{ 
-                          backgroundColor: `${skill.color}15`,
+                          backgroundColor: `${skill.color || '#7C3AED'}15`,
                         }}
                       >
-                        <skill.icon
-                          size={26}
-                          style={{ color: skill.color }}
-                        />
+                        {skill.icon && typeof skill.icon === 'function' ? (
+                          <skill.icon
+                            size={26}
+                            style={{ color: skill.color }}
+                          />
+                        ) : (
+                          <span style={{ fontSize: '26px', lineHeight: 1 }}>{skill.icon || '⚡'}</span>
+                        )}
                       </div>
                       
                       {/* Name */}

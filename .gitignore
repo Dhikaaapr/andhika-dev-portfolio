@@ -12,6 +12,19 @@ dist
 dist-ssr
 *.local
 
+# Sensitive files
+.env
+.env.local
+.env.*
+
+# Test scripts
+test-*.cjs
+test-*.js
+create-bucket.cjs
+list-buckets.cjs
+out.json
+eslint-output.txt
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
