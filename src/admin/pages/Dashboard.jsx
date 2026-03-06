@@ -112,11 +112,11 @@ export default function Dashboard() {
           <div style={{ display: 'flex', gap: '10px' }}>
             <button className="admin-btn admin-btn-secondary" onClick={fetchData}>
               <RefreshCw size={16} />
-              Refresh Data
+              <span>Refresh Data</span>
             </button>
             <Link to="/admin/projects" className="admin-btn admin-btn-primary">
               <Plus size={16} />
-              Add New Project
+              <span>Add New Project</span>
             </Link>
           </div>
         </div>

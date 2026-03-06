@@ -112,7 +112,7 @@ export default function ExperienceManager() {
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+      <div className="admin-header-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
         <div>
           <h2 style={{ fontSize: '20px', fontWeight: 700 }}>Experience</h2>
           <p style={{ fontSize: '13px', color: 'var(--admin-text-muted)' }}>
@@ -120,7 +120,7 @@ export default function ExperienceManager() {
           </p>
         </div>
         <button className="admin-btn admin-btn-primary" onClick={openAdd}>
-          <Plus size={16} /> Add Experience
+          <Plus size={16} /> <span>Add Experience</span>
         </button>
       </div>
 

@@ -68,7 +68,7 @@ export default function AdminLayout() {
           </div>
 
           <div className="admin-topbar-actions">
-            <div style={{ position: 'relative' }}>
+            <div className="admin-search-wrapper" style={{ position: 'relative' }}>
               <Search
                 size={18}
                 style={{
@@ -92,7 +92,7 @@ export default function AdminLayout() {
               className="admin-view-live"
             >
               <ExternalLink size={15} />
-              View Live Site
+              <span>View Live Site</span>
             </a>
           </div>
         </header>

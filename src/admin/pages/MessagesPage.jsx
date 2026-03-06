@@ -94,7 +94,7 @@ export default function MessagesPage() {
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: selected ? '1fr 1fr' : '1fr', gap: '20px' }}>
+      <div className={`messages-grid ${selected ? 'has-selection' : ''}`}>
         {/* Message List */}
         <div className="admin-card" style={{ padding: 0 }}>
           {filtered.length === 0 ? (

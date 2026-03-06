@@ -144,7 +144,7 @@ export default function ProjectsManager() {
   return (
     <div>
       {/* Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+      <div className="admin-header-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
         <div>
           <h2 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--admin-text)' }}>Projects</h2>
           <p style={{ fontSize: '13px', color: 'var(--admin-text-muted)' }}>
@@ -152,7 +152,7 @@ export default function ProjectsManager() {
           </p>
         </div>
         <button className="admin-btn admin-btn-primary" onClick={openAdd}>
-          <Plus size={16} /> Add Project
+          <Plus size={16} /> <span>Add Project</span>
         </button>
       </div>
 
